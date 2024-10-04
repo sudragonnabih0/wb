@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-image: linear-gradient(
+    to left bottom,
+    #000212,
+    #050719,
+    #0b0c1f,
+    #0e1025,
+    #11132b
+  );
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: block; /* Изменено с flex на block */
+  justify-content: center;
+  align-items: center;
+}
+
+.trs_lg {
+  transition: 0.4s ease;
+}
+
+.text_aines {
+  font-family: "Russo One", sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text_aines text {
+  text-transform: uppercase;
+  animation: stroke 7s infinite alternate;
+  stroke-width: 2;
+  stroke: #365fa0;
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(72, 138, 20, 0);
+    stroke: #2e70da;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: rgba(72, 138, 20, 0);
+    stroke: rgb(46, 112, 218);
+  }
+  80% {
+    fill: rgba(72, 138, 20, 0);
+    stroke: rgb(46, 112, 218);
+    stroke-width: 3;
+  }
+  100% {
+    fill: rgb(46, 112, 218);
+    stroke: rgba(54, 95, 160, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+
+.accordion {
+  border-radius: 4px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #94a3b888;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-title {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+}
+
+.arrow {
+  float: right;
+}
+
+.grid_content_m {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 30px;
+}
+
+/* Добавленные стили */
+.neon-border {
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #42f5f5, 0 0 20px #42f5f5, 0 0 30px #42f5f5, 0 0 40px #42f5f5;
+}
+
+.white-border {
+  border: 2px solid white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; /* Changed from column to row */
+  gap: 20px; /* Space between buttons */
+}
+
+.container .button {
+  position: relative;
+  width: 160px;
+  height: 60px;
+  display: inline-block;
+  background: #fff;
+  cursor: pointer;
+}
+
+.container .button:before,
+.container .button:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: 0.5s;
+  background: #f00;
+}
+
+.container .button:nth-child(1):before,
+.container .button:nth-child(1):after {
+  background: linear-gradient(45deg, #00ccff, #0e1538, #d400d4);
+}
+
+.container .button:nth-child(2):before,
+.container .button:nth-child(2):after {
+  background: linear-gradient(45deg, #f0075b, #0e1538, #1aff22);
+}
+
+.container .button:hover:before {
+  inset: -3px;
+}
+
+.container .button:hover:after {
+  inset: -3px;
+  filter: blur(10px);
+}
+
+.container .button span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: #0e1538;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  border: 1px solid #040a29;
+  overflow: hidden;
+}
+
+.container .button span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.075);
+  transform: skew(25deg);
+}
+
+/* Custom styles for the "More Info" button */
+.more-info-button {
+  background: #42f5f5;
+  color: #000;
+}
+
+.more-info-button:hover {
+  background: #00ccff;
+}
